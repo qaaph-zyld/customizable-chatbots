@@ -2,6 +2,8 @@
 
 A comprehensive platform for creating, managing, and analyzing customizable chatbots with an advanced analytics dashboard.
 
+![Dashboard Preview](https://via.placeholder.com/800x400?text=Dashboard+Preview)
+
 ## Features
 
 - **Chatbot Creation & Management**: Create and manage multiple chatbots with customizable templates
@@ -10,40 +12,42 @@ A comprehensive platform for creating, managing, and analyzing customizable chat
 - **Analytics Dashboard**: Comprehensive analytics for monitoring chatbot performance
 - **User Engagement Tracking**: Monitor user interactions and engagement metrics
 - **Response Quality Analysis**: Analyze response quality and sentiment
+- **Chat Widget**: Test your chatbots with an interactive chat interface
 
-## Analytics Dashboard
+## Tech Stack
 
-The Analytics Dashboard provides comprehensive insights into chatbot performance, user engagement, and response quality. Key features include:
+### Backend
+- **Node.js** + **Express** - REST API server
+- **In-memory store** (easily swappable to MongoDB)
 
-- **Overview Panel**: Key metrics and trends at a glance
-- **Conversations Panel**: Detailed conversation metrics and distributions
-- **Templates Panel**: Template usage statistics and performance
-- **User Engagement Panel**: User metrics, retention, and session data
-- **Response Quality Panel**: Response time, sentiment, and quality metrics
+### Frontend
+- **React 18** + **TypeScript** - UI framework
+- **Vite** - Build tool
+- **TailwindCSS** - Styling
+- **Recharts** - Data visualization
+- **Lucide React** - Icons
+- **React Router** - Navigation
+- **Axios** - HTTP client
 
 ## Project Structure
 
 ```
-├── docs/                  # Documentation files
-│   ├── analytics-dashboard-implementation.md
-│   └── analytics-dashboard-next-steps.md
-├── scripts/               # Utility scripts
-│   ├── validate-analytics-endpoints.js
-│   └── test-analytics-dashboard-ui.js
-├── src/
-│   ├── api/               # Backend API
-│   │   ├── controllers/
-│   │   └── routes/
-│   ├── frontend/          # Frontend components
-│   │   ├── components/
-│   │   │   ├── AnalyticsDashboard/
-│   │   │   │   ├── panels/
-│   │   │   │   └── AnalyticsDashboard.css
-│   │   │   └── common/
-│   │   └── services/
-│   └── utils/             # Utility functions
-├── test-results/          # Test results and reports
-└── README.md
+customizable-chatbots/
+├── client/                 # React frontend
+│   ├── src/
+│   │   ├── components/     # Shared components
+│   │   ├── pages/          # Page components
+│   │   ├── lib/            # API client & utilities
+│   │   └── main.tsx        # Entry point
+│   └── package.json
+├── server/                 # Express backend
+│   ├── src/
+│   │   ├── routes/         # API routes
+│   │   ├── data/           # In-memory data store
+│   │   └── index.js        # Entry point
+│   └── package.json
+├── docs/                   # Documentation
+└── package.json            # Root package.json
 ```
 
 ## Getting Started
@@ -52,7 +56,6 @@ The Analytics Dashboard provides comprehensive insights into chatbot performance
 
 - Node.js (v16 or higher)
 - npm or yarn
-- MongoDB
 
 ### Installation
 
@@ -62,47 +65,103 @@ git clone https://github.com/qaaph-zyld/customizable-chatbots.git
 cd customizable-chatbots
 ```
 
-2. Install dependencies:
+2. Install all dependencies:
 ```bash
-npm install
+npm run install:all
 ```
 
-3. Start the development server:
+Or install manually:
+```bash
+npm install
+cd server && npm install
+cd ../client && npm install
+```
+
+3. Start the development servers:
 ```bash
 npm run dev
 ```
 
-## Testing
+This will start:
+- Backend API at `http://localhost:3001`
+- Frontend at `http://localhost:5173`
 
-Run the automated tests:
+## API Endpoints
 
-```bash
-npm test
-```
+### Chatbots
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/chatbots` | Get all chatbots |
+| GET | `/api/chatbots/:id` | Get chatbot by ID |
+| POST | `/api/chatbots` | Create chatbot |
+| PUT | `/api/chatbots/:id` | Update chatbot |
+| DELETE | `/api/chatbots/:id` | Delete chatbot |
+| POST | `/api/chatbots/:id/toggle-status` | Toggle active/inactive |
 
-Validate API endpoints:
+### Templates
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/templates` | Get all templates |
+| GET | `/api/templates/:id` | Get template by ID |
+| POST | `/api/templates` | Create template |
+| PUT | `/api/templates/:id` | Update template |
+| DELETE | `/api/templates/:id` | Delete template |
 
-```bash
-node scripts/validate-analytics-endpoints.js
-```
+### Conversations
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/conversations` | Get all conversations |
+| POST | `/api/conversations` | Start new conversation |
+| POST | `/api/conversations/:id/messages` | Send message |
 
-Test UI integration:
+### Analytics Dashboard
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/analytics-dashboard/overview` | Overview metrics |
+| GET | `/api/analytics-dashboard/conversations` | Conversation analytics |
+| GET | `/api/analytics-dashboard/templates` | Template analytics |
+| GET | `/api/analytics-dashboard/user-engagement` | User engagement |
+| GET | `/api/analytics-dashboard/response-quality` | Response quality |
 
-```bash
-node scripts/test-analytics-dashboard-ui.js
-```
+## Screenshots
+
+### Dashboard
+![Dashboard](https://via.placeholder.com/600x300?text=Dashboard)
+
+### Chatbots Management
+![Chatbots](https://via.placeholder.com/600x300?text=Chatbots)
+
+### Analytics
+![Analytics](https://via.placeholder.com/600x300?text=Analytics)
+
+### Chat Widget
+![Chat Widget](https://via.placeholder.com/600x300?text=Chat+Widget)
 
 ## Documentation
 
 - [Analytics Dashboard Implementation](docs/analytics-dashboard-implementation.md)
 - [Analytics Dashboard Next Steps](docs/analytics-dashboard-next-steps.md)
 
+## Roadmap
+
+- [ ] MongoDB integration
+- [ ] User authentication
+- [ ] AI/LLM integration for chatbot responses
+- [ ] Export reports (CSV, PDF)
+- [ ] Real-time updates with WebSockets
+- [ ] Embeddable chat widget
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
 ## Acknowledgments
 
-- React Bootstrap for UI components
+- React for the UI framework
 - Recharts for data visualization
-- Axios for API communication
+- TailwindCSS for styling
+- Lucide for icons

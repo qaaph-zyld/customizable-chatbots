@@ -1,0 +1,21 @@
+{
+  "name": "customizable-chatbots",
+  "version": "1.0.0",
+  "description": "A platform for creating and managing customizable chatbots with comprehensive analytics dashboard",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "build": "cd client && npm run build",
+    "start": "cd server && npm start",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "test": "cd server && npm test"
+  },
+  "keywords": ["chatbot", "analytics", "dashboard", "ai"],
+  "author": "qaaph-zyld",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
