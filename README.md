@@ -1,24 +1,43 @@
 # Customizable Chatbots Platform
 
-A comprehensive platform for creating, managing, and analyzing customizable chatbots with an advanced analytics dashboard.
+A full-featured platform for creating AI-powered chatbots with knowledge bases, multi-channel support, and advanced analytics.
 
 ![Dashboard Preview](https://via.placeholder.com/800x400?text=Dashboard+Preview)
 
 ## Features
 
-- **Chatbot Creation & Management**: Create and manage multiple chatbots with customizable templates
-- **Conversation Management**: Track and analyze conversations across all chatbots
-- **Template Management**: Create and manage reusable templates for quick chatbot deployment
-- **Analytics Dashboard**: Comprehensive analytics for monitoring chatbot performance
-- **User Engagement Tracking**: Monitor user interactions and engagement metrics
-- **Response Quality Analysis**: Analyze response quality and sentiment
-- **Chat Widget**: Test your chatbots with an interactive chat interface
+### Core
+- **AI-Powered Responses** - GPT-4o-mini integration for intelligent conversations
+- **Knowledge Base (RAG)** - Train chatbots with your documents using vector embeddings
+- **Multi-Channel Support** - Web widget, WhatsApp, SMS, Slack, Facebook Messenger
+- **Real-time Chat** - Supabase real-time subscriptions
+
+### Management
+- **Chatbot CRUD** - Create and manage multiple chatbots
+- **Template System** - Reusable templates with system prompts
+- **Conversation Tracking** - Full conversation history and management
+- **Analytics Dashboard** - 5 comprehensive analytics panels
+
+### Integrations
+- **Webhooks** - Custom webhooks with signature verification
+- **Slack** - Direct Slack channel integration
+- **WhatsApp/SMS** - Via Twilio
+- **Embeddable Widget** - One-line embed code for any website
+- **REST API** - Full API access with API key authentication
+
+### Enterprise
+- **User Authentication** - Email/password + OAuth via Supabase
+- **API Keys** - Generate API keys for external access
+- **Row-Level Security** - Multi-tenant data isolation
+- **Sentiment Analysis** - Automatic sentiment detection
 
 ## Tech Stack
 
 ### Backend
 - **Node.js** + **Express** - REST API server
-- **In-memory store** (easily swappable to MongoDB)
+- **Supabase** - PostgreSQL database, Auth, Real-time
+- **OpenAI** - GPT-4o-mini for AI responses, Ada-002 for embeddings
+- **Twilio** - WhatsApp and SMS integration
 
 ### Frontend
 - **React 18** + **TypeScript** - UI framework
@@ -26,8 +45,8 @@ A comprehensive platform for creating, managing, and analyzing customizable chat
 - **TailwindCSS** - Styling
 - **Recharts** - Data visualization
 - **Lucide React** - Icons
-- **React Router** - Navigation
-- **Axios** - HTTP client
+- **Zustand** - State management
+- **Supabase JS** - Auth and real-time
 
 ## Project Structure
 
@@ -144,12 +163,41 @@ This will start:
 
 ## Roadmap
 
-- [ ] MongoDB integration
-- [ ] User authentication
-- [ ] AI/LLM integration for chatbot responses
+### Completed 
+- [x] Supabase integration (PostgreSQL, Auth, Real-time)
+- [x] User authentication (Email/password, OAuth)
+- [x] AI/LLM integration (OpenAI GPT-4o-mini)
+- [x] Knowledge Base with RAG (Vector embeddings)
+- [x] Embeddable chat widget
+- [x] Multi-channel support (WhatsApp, SMS, Slack)
+- [x] Webhooks system
+- [x] API key authentication
+
+### Planned
 - [ ] Export reports (CSV, PDF)
-- [ ] Real-time updates with WebSockets
-- [ ] Embeddable chat widget
+- [ ] Custom AI model support (Claude, Llama)
+- [ ] A/B testing for chatbot responses
+- [ ] Advanced analytics with ML insights
+- [ ] Team collaboration features
+- [ ] White-label support
+
+## Environment Setup
+
+### Server (.env)
+```env
+SUPABASE_URL=your_supabase_url
+SUPABASE_ANON_KEY=your_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_service_key
+OPENAI_API_KEY=your_openai_key
+TWILIO_ACCOUNT_SID=your_twilio_sid
+TWILIO_AUTH_TOKEN=your_twilio_token
+```
+
+### Client (.env)
+```env
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_anon_key
+```
 
 ## License
 

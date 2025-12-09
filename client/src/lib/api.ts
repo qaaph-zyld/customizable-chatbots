@@ -7,6 +7,34 @@ const api = axios.create({
   }
 })
 
+// Add auth token to requests
+api.interceptors.request.use((config) => {
+  const stored = localStorage.getItem('auth-storage')
+  if (stored) {
+    try {
+      const { state } = JSON.parse(stored)
+      if (state?.session?.access_token) {
+        config.headers.Authorization = `Bearer ${state.session.access_token}`
+      }
+    } catch (e) {
+      // Ignore parse errors
+    }
+  }
+  return config
+})
+
+// Handle auth errors
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      localStorage.removeItem('auth-storage')
+      window.location.href = '/login'
+    }
+    return Promise.reject(error)
+  }
+)
+
 // Chatbots API
 export const chatbotsApi = {
   getAll: () => api.get('/chatbots'),
