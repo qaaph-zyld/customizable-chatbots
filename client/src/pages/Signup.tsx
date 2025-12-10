@@ -1,10 +1,9 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Bot, Mail, Lock, User, Loader2, CheckCircle } from 'lucide-react'
 import { useAuthStore } from '../lib/store'
 
 export default function Signup() {
-  const navigate = useNavigate()
   const { signUp } = useAuthStore()
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')

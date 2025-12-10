@@ -71,7 +71,7 @@ app.get('/health', (req, res) => {
     status: 'ok', 
     timestamp: new Date().toISOString(),
     version: '2.0.0',
-    supabase: isSupabaseConfigured,
+    supabase: !!isSupabaseConfigured,
     openai: !!process.env.OPENAI_API_KEY
   });
 });
@@ -110,9 +110,11 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
-  console.log(`📚 API docs at http://localhost:${PORT}/api`);
-});
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running on http://localhost:${PORT}`);
+    console.log(`📚 API docs at http://localhost:${PORT}/api`);
+  });
+}
 
 module.exports = app;

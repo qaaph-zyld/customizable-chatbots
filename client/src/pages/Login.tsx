@@ -5,7 +5,7 @@ import { useAuthStore } from '../lib/store'
 
 export default function Login() {
   const navigate = useNavigate()
-  const { signIn, isLoading } = useAuthStore()
+  const { signIn } = useAuthStore()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Settings as SettingsIcon, Key, Webhook, Plug, Copy, Plus, Trash2, Eye, EyeOff } from 'lucide-react'
+import { Settings as SettingsIcon, Key, Webhook, Plug, Copy, Plus, Trash2 } from 'lucide-react'
 import { useAuthStore } from '../lib/store'
 import api from '../lib/api'
 
@@ -9,7 +9,6 @@ export default function Settings() {
   const [apiKeys, setApiKeys] = useState<any[]>([])
   const [webhooks, setWebhooks] = useState<any[]>([])
   const [integrations, setIntegrations] = useState<any[]>([])
-  const [loading, setLoading] = useState(false)
   const [showNewApiKeyModal, setShowNewApiKeyModal] = useState(false)
   const [newApiKey, setNewApiKey] = useState<string | null>(null)
 

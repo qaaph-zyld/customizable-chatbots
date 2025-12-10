@@ -29,7 +29,7 @@ interface AuthState {
 
 export const useAuthStore = create<AuthState>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       user: null,
       session: null,
       isLoading: true,
@@ -71,8 +71,7 @@ export const useAuthStore = create<AuthState>()(
         if (!isSupabaseConfigured) {
           return { error: 'Supabase not configured. Running in demo mode.' }
         }
-
-        const { data, error } = await supabase.auth.signUp({
+        const { error } = await supabase.auth.signUp({
           email,
           password,
           options: {

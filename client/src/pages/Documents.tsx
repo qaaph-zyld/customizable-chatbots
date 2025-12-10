@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { FileText, Plus, Trash2, Upload, RefreshCw, Search, ArrowLeft, CheckCircle, Clock } from 'lucide-react'
+import { FileText, Plus, Trash2, RefreshCw, Search, ArrowLeft, CheckCircle, Clock } from 'lucide-react'
 import api from '../lib/api'
 
 interface Document {

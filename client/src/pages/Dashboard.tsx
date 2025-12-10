@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Bot, MessageSquare, Users, TrendingUp, ArrowRight } from 'lucide-react'
+import { Bot, MessageSquare, TrendingUp, ArrowRight } from 'lucide-react'
 import { analyticsApi, chatbotsApi } from '../lib/api'
 
 interface OverviewData {
