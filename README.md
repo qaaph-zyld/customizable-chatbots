@@ -1,10 +1,38 @@
-# Customizable Chatbots Platform
+<div align="center">
 
-A full-featured platform for creating AI-powered chatbots with knowledge bases, multi-channel support, and advanced analytics.
+# 🤖 Customizable Chatbots Platform
 
-![Dashboard Preview](https://via.placeholder.com/800x400?text=Dashboard+Preview)
+### Build, Deploy & Analyze AI-Powered Chatbots
 
-## Features
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
+[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4-412991?logo=openai&logoColor=white)](https://openai.com/)
+
+[**Quick Start**](#-quick-start) · [**Features**](#-features) · [**Demo**](#-demo-mode) · [**API Docs**](#api-endpoints)
+
+</div>
+
+---
+
+## 🚀 Quick Start
+
+```bash
+# Clone & run in demo mode (no API keys needed!)
+git clone https://github.com/qaaph-zyld/customizable-chatbots.git
+cd customizable-chatbots
+npm run install:all
+npm run dev
+```
+
+**Open:** http://localhost:5173
+
+> 💡 **Demo Mode:** Runs with mock data when no API keys are configured. Perfect for testing!
+
+---
+
+## ✨ Features
 
 ### Core
 - **AI-Powered Responses** - GPT-4o-mini integration for intelligent conversations
@@ -142,21 +170,91 @@ This will start:
 | GET | `/api/analytics-dashboard/user-engagement` | User engagement |
 | GET | `/api/analytics-dashboard/response-quality` | Response quality |
 
-## Screenshots
+## 🏗️ Architecture
 
-### Dashboard
-![Dashboard](https://via.placeholder.com/600x300?text=Dashboard)
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                           FRONTEND (React + TS)                         │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐     │
+│  │Dashboard │ │ Chatbots │ │Analytics │ │Templates │ │  Widget  │     │
+│  └────┬─────┘ └────┬─────┘ └────┬─────┘ └────┬─────┘ └────┬─────┘     │
+└───────┼────────────┼────────────┼────────────┼────────────┼───────────┘
+        │            │            │            │            │
+        └────────────┴────────────┴────────────┴────────────┘
+                                  │
+                          ┌───────▼───────┐
+                          │  REST API     │
+                          │  (Express)    │
+                          └───────┬───────┘
+                                  │
+        ┌─────────────────────────┼─────────────────────────┐
+        │                         │                         │
+┌───────▼───────┐         ┌───────▼───────┐         ┌───────▼───────┐
+│   Supabase    │         │    OpenAI     │         │    Twilio     │
+│  (PostgreSQL) │         │   (GPT-4o)    │         │ (SMS/WhatsApp)│
+│  Auth + RLS   │         │  Embeddings   │         │               │
+└───────────────┘         └───────────────┘         └───────────────┘
+```
 
-### Chatbots Management
-![Chatbots](https://via.placeholder.com/600x300?text=Chatbots)
+---
 
-### Analytics
-![Analytics](https://via.placeholder.com/600x300?text=Analytics)
+## 🎮 Demo Mode
 
-### Chat Widget
-![Chat Widget](https://via.placeholder.com/600x300?text=Chat+Widget)
+The platform includes a **fully functional demo mode** that works without any API keys:
 
-## Documentation
+```bash
+npm run dev  # Just run it - no configuration needed!
+```
+
+**Demo mode includes:**
+- 📊 3 pre-configured chatbots
+- 📝 3 template types (Support, Sales, FAQ)
+- 💬 Sample conversations with sentiment analysis
+- 📈 30 days of mock analytics data
+- 🔄 Full CRUD operations (in-memory)
+
+> When you add Supabase/OpenAI keys, the platform automatically switches to production mode.
+
+---
+
+## 📸 Screenshots
+
+<details>
+<summary><b>Dashboard Overview</b> - Key metrics and chatbot list</summary>
+
+The dashboard displays:
+- Total/Active chatbots count
+- Conversation statistics
+- Satisfaction rate
+- Recent chatbot activity
+
+</details>
+
+<details>
+<summary><b>Analytics Panel</b> - 5 comprehensive views</summary>
+
+1. **Overview** - High-level metrics and trends
+2. **Conversations** - Resolution rates, duration, status
+3. **Templates** - Usage statistics by category
+4. **User Engagement** - Active users, retention, sessions
+5. **Response Quality** - Sentiment analysis, response times
+
+</details>
+
+<details>
+<summary><b>Chatbot Builder</b> - Create and configure bots</summary>
+
+- Name and description
+- Template selection
+- Welcome/fallback messages
+- Channel configuration
+- Knowledge base upload (RAG)
+
+</details>
+
+---
+
+## 📚 Documentation
 
 - [Analytics Dashboard Implementation](docs/analytics-dashboard-implementation.md)
 - [Analytics Dashboard Next Steps](docs/analytics-dashboard-next-steps.md)
