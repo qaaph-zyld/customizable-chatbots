@@ -217,6 +217,40 @@ npm run dev  # Just run it - no configuration needed!
 
 ---
 
+## 🎬 Demo Walkthrough
+
+Follow these steps to explore the platform in **demo mode**:
+
+1. **Login (Demo User)**  
+   - Open `http://localhost:5173`  
+   - Click **"Try Demo Mode"** on the login screen  
+   - You’ll be automatically logged in as a demo user  
+   - _Screenshot placeholder:_ `docs/screenshots/login-demo.png`
+
+2. **Dashboard Overview**  
+   - See total/active chatbots, conversations and satisfaction rate  
+   - Recent chatbots listed with status badges  
+   - _Screenshot placeholder:_ `docs/screenshots/dashboard.png`
+
+3. **Chatbots List & Detail**  
+   - Go to **Chatbots** to view all bots  
+   - Click a chatbot to see description, status and configuration  
+   - _Screenshot placeholder:_ `docs/screenshots/chatbots-list.png`
+
+4. **Analytics Dashboard**  
+   - Open **Analytics** to explore the 5 analytics panels  
+   - Inspect conversation trends, template usage and response quality  
+   - _Screenshot placeholder:_ `docs/screenshots/analytics-overview.png`
+
+5. **Knowledge Base (Documents)**  
+   - Open a chatbot and go to **Knowledge Base**  
+   - View documents, processing status and run semantic search  
+   - _Screenshot placeholder:_ `docs/screenshots/knowledge-base.png`
+
+> You can replace the placeholder paths above with real screenshots for your portfolio.
+
+---
+
 ## 📸 Screenshots
 
 <details>
