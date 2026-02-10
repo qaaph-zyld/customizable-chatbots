@@ -51,6 +51,17 @@ export default function DashboardPage() {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 py-8">
+        {/* Demo Banner */}
+        <div className="mb-6 bg-blue-50 border border-blue-200 rounded-xl px-5 py-4 flex items-start gap-3">
+          <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+            <span className="text-blue-600 text-xs font-bold">i</span>
+          </div>
+          <div>
+            <p className="text-sm font-semibold text-blue-900">Interactive Demo</p>
+            <p className="text-xs text-blue-700 mt-0.5">This dashboard shows sample data to demonstrate the platform&apos;s capabilities. No real bots, API keys, or analytics are connected. <a href="/#pricing" className="underline font-medium">Contact us</a> to set up your account.</p>
+          </div>
+        </div>
+
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           {[
@@ -159,7 +170,7 @@ export default function DashboardPage() {
             {/* API Documentation snippet */}
             <div className="bg-white rounded-xl border border-zinc-200 p-6">
               <h3 className="text-sm font-semibold text-zinc-900 mb-3">Quick Start</h3>
-              <pre className="bg-zinc-900 text-zinc-300 rounded-xl p-5 text-sm overflow-x-auto font-mono">{`curl -X POST https://api.chatbots.dev/v1/chat \\
+              <pre className="bg-zinc-900 text-zinc-300 rounded-xl p-5 text-sm overflow-x-auto font-mono">{`curl -X POST https://customizable-chatbots.netlify.app/api/chat \\
   -H "Authorization: Bearer cb_live_sk_...8f3d" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -181,7 +192,7 @@ export default function DashboardPage() {
                 <h3 className="text-sm font-semibold text-zinc-900 mb-3">Installation</h3>
                 <p className="text-sm text-zinc-500 mb-4">Add this snippet before the closing <code className="bg-zinc-100 px-1.5 py-0.5 rounded text-xs">&lt;/body&gt;</code> tag of your website:</p>
                 <pre className="bg-zinc-900 text-zinc-300 rounded-xl p-5 text-sm overflow-x-auto font-mono">{`<script
-  src="https://cdn.chatbots.dev/widget.js"
+  src="https://customizable-chatbots.netlify.app/widget.js"
   data-bot-id="bot-1"
   data-api-key="cb_live_sk_...8f3d"
   data-theme="auto"
